@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.Signup">
+   <children>
+      <Button fx:id="back" layoutX="41.0" layoutY="335.0" mnemonicParsing="false" text="Átras" AnchorPane.leftAnchor="41.0" />
+      <Button fx:id="signup" layoutX="263.0" layoutY="246.0" mnemonicParsing="false" text="Registrarse" AnchorPane.leftAnchor="263.0" />
+      <Button fx:id="imagechoose" layoutX="427.0" layoutY="202.0" mnemonicParsing="false" text="Imagen ..." AnchorPane.leftAnchor="427.0" />
+      <Label layoutX="286.0" layoutY="44.0" text="Registro" AnchorPane.leftAnchor="286.0" AnchorPane.topAnchor="44.0" />
+      <PasswordField fx:id="pass" layoutX="140.0" layoutY="115.0" promptText="Contraseña" AnchorPane.leftAnchor="140.0" />
+      <TextField fx:id="user" layoutX="140.0" layoutY="80.0" promptText="Usuario" AnchorPane.leftAnchor="140.0" />
+      <TextField fx:id="email" layoutX="140.0" layoutY="155.0" promptText="E-mail" AnchorPane.leftAnchor="140.0" />
+      <DatePicker fx:id="date" layoutX="128.0" layoutY="202.0" promptText="Fecha de nacimiento" AnchorPane.leftAnchor="128.0" />
+      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="353.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="353.0" />
+   </children>
+</AnchorPane>

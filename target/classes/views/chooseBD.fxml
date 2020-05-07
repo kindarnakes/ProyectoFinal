@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="259.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.ChooseBD">
+   <children>
+      <Label layoutX="153.0" layoutY="52.0" text="Escoge la Base de Datos" AnchorPane.topAnchor="52.0" />
+      <TextField fx:id="bdname" layoutX="152.0" layoutY="105.0" promptText="Nombre de la DB" AnchorPane.leftAnchor="152.0" />
+      <TextField fx:id="user" layoutX="152.0" layoutY="136.0" promptText="Usuario" AnchorPane.leftAnchor="152.0" />
+      <PasswordField fx:id="pass" layoutX="152.0" layoutY="161.0" promptText="Contraseña" AnchorPane.leftAnchor="152.0" />
+   </children>
+</AnchorPane>

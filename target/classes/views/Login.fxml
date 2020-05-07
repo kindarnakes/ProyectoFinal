@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.LoginController">
+   <children>
+      <Button fx:id="exit" layoutX="52.0" layoutY="336.0" mnemonicParsing="false" text="Exit" AnchorPane.leftAnchor="52.0" />
+      <Button fx:id="aceptar" layoutX="261.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="Login" AnchorPane.leftAnchor="261.0" />
+      <PasswordField fx:id="password" layoutX="219.0" layoutY="200.0" promptText="Contraseña" AnchorPane.leftAnchor="219.0" />
+      <TextField fx:id="usuario" layoutX="219.0" layoutY="153.0" promptText="Usuario" AnchorPane.leftAnchor="219.0" />
+      <Label layoutX="115.0" layoutY="157.0" text="Usuario: " AnchorPane.leftAnchor="115.0" />
+      <Label layoutX="115.0" layoutY="204.0" prefHeight="17.0" prefWidth="75.0" text="Contraseña: " AnchorPane.leftAnchor="115.0" />
+      <ImageView fx:id="banner" fitHeight="150.0" fitWidth="463.0" layoutX="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="signup" layoutX="480.0" layoutY="336.0" mnemonicParsing="false" text="Registrarse" AnchorPane.leftAnchor="480.0" />
+   </children>
+</AnchorPane>
