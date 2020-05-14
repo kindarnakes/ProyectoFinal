@@ -46,10 +46,13 @@ public class ChooseBD {
 
 
         Parent root;
-        try (Connection con = Data.getINSTANCE().get_conn()){
-            root = FXMLLoader.load(App.class.getResource("/views/Emergente.fxml"));
+        try (Connection con = Data.getINSTANCE().get_conn()) {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("/views/Emergente.fxml"));
+            root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Conexión");
+            Emergente mensaje = loader.getController();
+            mensaje.setMensaje("Conexión Exitosa");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();

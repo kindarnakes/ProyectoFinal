@@ -31,10 +31,10 @@ public class LoginController {
     public void login() throws IOException {
         User u = null;
         u = UserDAO.getUserByNameAndPass(usuario.getText(), password.getText());
-        if(u != null && password.getText().equals(u.get_password())){
+        if (u != null && password.getText().equals(u.get_password())) {
             Data.getINSTANCE().set_logged(u);
             App.setRoot("Profile");
-        }else{
+        } else {
             Parent root;
             try {
                 root = FXMLLoader.load(App.class.getResource("/views/Emergente.fxml"));
@@ -72,7 +72,7 @@ public class LoginController {
 
 
     @FXML
-    public void close(){
+    public void close() {
         System.exit(0);
     }
 

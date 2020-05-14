@@ -2,6 +2,7 @@ package Proyecto.model;
 
 import java.io.*;
 import java.sql.*;
+import java.time.LocalDate;
 
 public class UserDAO extends User {
 
@@ -17,7 +18,7 @@ public class UserDAO extends User {
                 if (rs != null && rs.next()) {
                     createUser(user, u, rs);
                     rs.close();
-                }else{
+                } else {
                     DriverConnection.setError("No existe el usuario");
                 }
             } catch (SQLException | IOException ex) {
@@ -28,7 +29,7 @@ public class UserDAO extends User {
         return u;
     }
 
-    public static User getUserByNameAndPass(String user, String pass){
+    public static User getUserByNameAndPass(String user, String pass) {
         User u = new User();
         Connection conn = Data.getINSTANCE().get_conn();
         if (conn != null) {
@@ -40,7 +41,7 @@ public class UserDAO extends User {
                 if (rs != null && rs.next()) {
                     createUser(user, u, rs);
                     rs.close();
-                }else{
+                } else {
                     DriverConnection.setError("No existe el usuario");
                 }
             } catch (SQLException | IOException ex) {
@@ -57,9 +58,36 @@ public class UserDAO extends User {
         u.set_password(pass);
         u.set_email(rs.getString("email"));
         Date born = rs.getDate("born_date");
-        u.set_born(born != null? born.toLocalDate() : null);
+        u.set_born(born != null ? born.toLocalDate() : null);
         Blob img = rs.getBlob("image");
         u.set_img(img);
+    }
+
+
+    public static boolean signUp(String _username, String _password, String _email, LocalDate _born, FileInputStream _img) {
+        boolean signup = false;
+        String sql = "INSERT INTO user(username, password, email, born_date, image) VALUES(?,?,?,?,?)";
+
+        Connection conn = Data.getINSTANCE().get_conn();
+        if (conn != null) {
+            try (PreparedStatement st = conn.prepareStatement(sql)) {
+                st.setString(1, _username);
+                st.setString(2, _password);
+                st.setString(3, _email);
+                st.setDate(4, _born != null ? Date.valueOf(_born) : null);
+                st.setBlob(5, _img);
+                Integer rs = st.executeUpdate();
+                if (rs != null && rs == 1) {
+                    signup = true;
+                } else {
+                    DriverConnection.setError("Existe el usuario");
+                }
+            } catch (SQLException ex) {
+                DriverConnection.setError("No se ha podido registrar " + ex);
+            }
+        }
+
+        return signup;
     }
 
 }

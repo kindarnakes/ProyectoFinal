@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DriverConnection {
 
-    private static String error  = "";
+    private static String error = "";
 
     private static void loadDriver() {
         try {
