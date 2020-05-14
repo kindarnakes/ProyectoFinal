@@ -1,6 +1,6 @@
 package Proyecto.model;
 
-import java.io.File;
+import java.sql.Blob;
 import java.time.LocalDate;
 
 public class User {
@@ -8,10 +8,12 @@ public class User {
     private String _password;
     private String _email;
     private LocalDate _born;
-    private File _img;
+    private Blob _img;
 
+    public User() {
+    }
 
-    public User(String _username, String _password, String _email, LocalDate _born, File _img) {
+    public User(String _username, String _password, String _email, LocalDate _born, Blob _img) {
         this._username = _username;
         this._password = _password;
         this._email = _email;
@@ -51,11 +53,11 @@ public class User {
         this._born = _born;
     }
 
-    public File get_img() {
+    public Blob get_img() {
         return _img;
     }
 
-    public void set_img(File _img) {
+    public void set_img(Blob _img) {
         this._img = _img;
     }
 

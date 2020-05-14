@@ -1,8 +1,15 @@
-module-info.class
+Proyecto\model\Data.class
+Proyecto\model\Card.class
+Proyecto\model\Score.class
+Proyecto\model\DriverConnection.class
 Proyecto\controllers\ChooseBD.class
 Proyecto\controllers\Ymedia.class
+Proyecto\model\Deck.class
+module-info.class
+Proyecto\model\SieteYMedia.class
 Proyecto\model\User.class
 Proyecto\controllers\Signup.class
+Proyecto\model\Match.class
 Proyecto\controllers\Profile.class
 Proyecto\App.class
 Proyecto\controllers\LoginController.class

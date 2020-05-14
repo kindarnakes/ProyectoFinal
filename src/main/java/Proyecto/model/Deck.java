@@ -21,8 +21,8 @@ public class Deck {
      * Inicializa y aleatoriza una baraja.
      */
     public final void barajar() {
-        String[] palos = {"Trébol", "Diamantes", "Picas", "Corazones"};
-        String[] numeros = {"As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+        String[] palos = {"Espadas", "Oros", "Copas", "Bastos"};
+        String[] numeros = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
         int i = 0;
         _cartas = new ArrayList<>();
         _sacadas = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Deck {
             i = 0;
             for (String n : numeros) {
                 i++;
-                _cartas.add(new Card(((i == 1) ? 14 : i), n + " de " + p));
+                _cartas.add(new Card(((i > 7) ? 0.5f : i), n + " de " + p));
             }
         }
         Collections.shuffle(_cartas);
