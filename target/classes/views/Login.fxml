@@ -4,26 +4,36 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Proyecto.controllers.LoginController">
     <children>
-        <Button fx:id="exit" layoutX="52.0" layoutY="336.0" mnemonicParsing="false" onAction="#close" text="Exit" AnchorPane.leftAnchor="52.0" />
-        <Button fx:id="login" layoutX="261.0" layoutY="265.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="66.0" text="Login" AnchorPane.leftAnchor="261.0" />
-        <PasswordField fx:id="password" layoutX="219.0" layoutY="200.0" promptText="Contraseña" AnchorPane.leftAnchor="219.0" />
-        <TextField fx:id="usuario" layoutX="219.0" layoutY="153.0" promptText="Usuario" AnchorPane.leftAnchor="219.0" />
-        <Label layoutX="115.0" layoutY="157.0" text="Usuario: " AnchorPane.leftAnchor="115.0" />
-        <Label layoutX="115.0" layoutY="204.0" prefHeight="17.0" prefWidth="75.0" text="Contraseña: " AnchorPane.leftAnchor="115.0" />
-        <ImageView fx:id="banner" fitHeight="150.0" fitWidth="253.0" layoutX="162.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="0.0" />
-        <Button fx:id="signup" layoutX="480.0" layoutY="336.0" mnemonicParsing="false" onAction="#signUp" text="Registrarse" AnchorPane.leftAnchor="480.0" />
+        <Button fx:id="exit" layoutX="52.0" layoutY="336.0" mnemonicParsing="false" onAction="#close" text="Exit"
+                AnchorPane.leftAnchor="52.0"/>
+        <Button fx:id="login" layoutX="261.0" layoutY="265.0" mnemonicParsing="false" onAction="#login"
+                prefHeight="25.0" prefWidth="66.0" text="Login" AnchorPane.leftAnchor="261.0"/>
+        <PasswordField fx:id="password" layoutX="219.0" layoutY="200.0" promptText="Contraseña"
+                       AnchorPane.leftAnchor="219.0"/>
+        <TextField fx:id="usuario" layoutX="219.0" layoutY="153.0" promptText="Usuario" AnchorPane.leftAnchor="219.0"/>
+        <Label layoutX="115.0" layoutY="157.0" text="Usuario: " AnchorPane.leftAnchor="115.0"/>
+        <Label layoutX="115.0" layoutY="204.0" prefHeight="17.0" prefWidth="75.0" text="Contraseña: "
+               AnchorPane.leftAnchor="115.0"/>
+        <ImageView fx:id="banner" fitHeight="150.0" fitWidth="253.0" layoutX="162.0" pickOnBounds="true"
+                   preserveRatio="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="162.0"
+                   AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="0.0"/>
+        <Button fx:id="signup" layoutX="480.0" layoutY="336.0" mnemonicParsing="false" onAction="#signUp"
+                text="Registrarse" AnchorPane.leftAnchor="480.0"/>
         <MenuBar layoutX="4.0" layoutY="2.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Base de Datos">
                     <items>
-                        <MenuItem fx:id="choose" mnemonicParsing="false" onAction="#openChooser" text="Elegir Base de Datos" />
+                        <MenuItem fx:id="choose" mnemonicParsing="false" onAction="#openChooser"
+                                  text="Elegir Base de Datos"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="About"/>
                     </items>
                 </Menu>
             </menus>

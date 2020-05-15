@@ -3,6 +3,7 @@ package Proyecto.controllers;
 import java.io.IOException;
 
 import Proyecto.App;
+import Proyecto.Utils.Utils;
 import Proyecto.model.Data;
 import Proyecto.model.User;
 import Proyecto.model.UserDAO;
@@ -35,17 +36,7 @@ public class LoginController {
             Data.getINSTANCE().set_logged(u);
             App.setRoot("Profile");
         } else {
-            Parent root;
-            try {
-                root = FXMLLoader.load(App.class.getResource("/views/Emergente.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle("Fallo de identificación");
-                stage.setScene(new Scene(root));
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.show();
-            } catch (IOException e) {
-
-            }
+            Utils.emergente("Fallo de identificación", "");
 
         }
     }

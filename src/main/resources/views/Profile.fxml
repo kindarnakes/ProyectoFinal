@@ -4,31 +4,44 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="549.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.Profile">
+<AnchorPane prefHeight="549.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.Profile">
     <children>
-        <Label layoutX="257.0" layoutY="25.0" text="Perfil de usuario" />
-        <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
-        <Button fx:id="imagechoose" layoutX="417.0" layoutY="214.0" mnemonicParsing="false" text="Imagen ..." />
-        <Button fx:id="back" layoutX="43.0" layoutY="464.0" mnemonicParsing="false" onAction="#back" text="Átras" />
-        <Button fx:id="update" layoutX="168.0" layoutY="329.0" mnemonicParsing="false" text="Actualizar" />
-        <DatePicker fx:id="date" layoutX="107.0" layoutY="262.0" />
-        <TextField fx:id="email" layoutX="120.0" layoutY="214.0" />
-        <TextField fx:id="user" layoutX="120.0" layoutY="139.0" />
-        <PasswordField fx:id="pass" layoutX="120.0" layoutY="178.0" />
-        <Button fx:id="delete" layoutX="404.0" layoutY="329.0" mnemonicParsing="false" text="Borrar perfil" />
-        <CheckBox fx:id="deletecheck" layoutX="407.0" layoutY="304.0" mnemonicParsing="false" text="Borrar" />
+        <Label layoutX="257.0" layoutY="25.0" text="Perfil de usuario"/>
+        <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="64.0" pickOnBounds="true"
+                   preserveRatio="true"/>
+        <Button fx:id="imagechoose" layoutX="417.0" layoutY="214.0" mnemonicParsing="false" onAction="#imageSelector"
+                text="Imagen ..."/>
+        <Button fx:id="back" layoutX="43.0" layoutY="464.0" mnemonicParsing="false" onAction="#back" text="Átras"/>
+        <Button fx:id="update" layoutX="168.0" layoutY="329.0" mnemonicParsing="false" onAction="#update"
+                text="Actualizar"/>
+        <DatePicker fx:id="date" layoutX="107.0" layoutY="262.0"/>
+        <TextField fx:id="email" layoutX="120.0" layoutY="214.0"/>
+        <TextField fx:id="user" layoutX="120.0" layoutY="139.0"/>
+        <PasswordField fx:id="pass" layoutX="120.0" layoutY="178.0"/>
+        <Button fx:id="delete" layoutX="404.0" layoutY="329.0" mnemonicParsing="false" onAction="#delete"
+                text="Borrar perfil"/>
+        <CheckBox fx:id="deletecheck" layoutX="407.0" layoutY="304.0" mnemonicParsing="false" text="Borrar"/>
         <TabPane layoutX="213.0" layoutY="403.0" prefHeight="123.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab text="7 y media">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="150.0">
                             <children>
-                                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Jugar contra la IA" />
+                                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
+                                        text="Jugar contra la IA"/>
+                                <Button fx:id="vsonline" layoutX="27.0" layoutY="55.0" mnemonicParsing="false"
+                                        text="Jugar Online"/>
+                                <Button fx:id="vsplayer" layoutX="150.0" layoutY="14.0" mnemonicParsing="false"
+                                        text="Jugar Contra jugador"/>
+                                <Button fx:id="sevenscored" layoutX="146.0" layoutY="55.0" mnemonicParsing="false"
+                                        text="Tabla de puntuaciones"/>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
+        <Button fx:id="historic" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" text="Historial de partidas"/>
     </children>
 </AnchorPane>

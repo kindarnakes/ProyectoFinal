@@ -5,11 +5,15 @@ Proyecto\model\DriverConnection.class
 Proyecto\controllers\ChooseBD.class
 Proyecto\controllers\Ymedia.class
 Proyecto\model\Deck.class
+Proyecto\Run.class
 module-info.class
+Proyecto\controllers\Emergente.class
+Proyecto\model\ConnectionData.class
 Proyecto\model\SieteYMedia.class
 Proyecto\model\User.class
 Proyecto\controllers\Signup.class
 Proyecto\model\Match.class
+Proyecto\model\UserDAO.class
 Proyecto\controllers\Profile.class
 Proyecto\App.class
 Proyecto\controllers\LoginController.class

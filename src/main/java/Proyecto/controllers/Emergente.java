@@ -40,4 +40,8 @@ public class Emergente {
         DriverConnection.setError("");
         stage.close();
     }
+
+    public void finalize() {
+        DriverConnection.setError("");
+    }
 }
