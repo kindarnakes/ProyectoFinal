@@ -79,7 +79,12 @@ public class SieteYMedia {
             }
             Iterator<User> it = _users.keySet().iterator();
             MatchDAO.saveMatch(it.next(), it.next(), u, "7yMedia");
-            ScoreDAO.save(u.get_username(), (int) (score / playersCards(u).size()) * 10, "7yMedia");
+            for(User user: _users.keySet()){
+                if(Data.getINSTANCE().get_logged().equals(user)){
+                    ScoreDAO.save(user.get_username(), (score / playersCards(user).size()) * 10, "7yMedia");
+                }
+            }
+
         }
         return u;
     }

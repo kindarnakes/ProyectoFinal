@@ -27,10 +27,6 @@ public class ChooseBD {
 
     @FXML
     public void initialize() {
-        bdname.setText("juegos");
-        bdip.setText("localhost:3306");
-        user.setText("root");
-        pass.setText("10junio");
 
     }
 
