@@ -12,10 +12,12 @@ Proyecto\model\ScoreDAO.class
 module-info.class
 Proyecto\controllers\Emergente.class
 Proyecto\model\ConnectionData.class
+Proyecto\controllers\Historic.class
 Proyecto\model\SieteYMedia.class
 Proyecto\model\User.class
 Proyecto\controllers\Signup.class
 Proyecto\model\Match.class
+Proyecto\model\MatchDAO.class
 Proyecto\model\UserDAO.class
 Proyecto\controllers\Profile.class
 Proyecto\App.class

@@ -8,14 +8,11 @@ import Proyecto.Utils.Utils;
 import Proyecto.model.Data;
 import Proyecto.model.DriverConnection;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 
 public class LoginController {
@@ -26,6 +23,11 @@ public class LoginController {
     private PasswordField password;
     @FXML
     private ImageView banner;
+
+    @FXML
+    public void initialize(){
+        banner.setImage(new Image("/Banner.png"));
+    }
 
 
     @FXML
@@ -41,6 +43,11 @@ public class LoginController {
 
             Utils.emergente("Fallo de identificación", "No puedes dejar campos vacíos");
         }
+    }
+
+    @FXML
+    public void acerca(){
+        Utils.emergente("Acerca de ...", "Trabajo realizado por: Ángel Serrano García\nPara el módulo de Programación del CFGS DAM\nIES Francisco de los Ríos\nProfesor: Carlos Serrano Sánchez");
     }
 
     @FXML

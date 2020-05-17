@@ -120,4 +120,9 @@ public class Profile {
     public void playIA7Media() throws IOException {
         App.setRoot("7yMedia");
     }
+
+    @FXML
+    public void historic() {
+        Utils.newWindow("/views/Historic.fxml", "Historial de partidas", Modality.APPLICATION_MODAL);
+    }
 }

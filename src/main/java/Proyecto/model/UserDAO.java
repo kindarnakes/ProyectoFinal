@@ -12,7 +12,7 @@ public class UserDAO extends User {
 
 
     public static User getUserByNameAndPass(String user, String pass) {
-        User u = new User();
+        User u = null;
         String password = "";
         Connection conn = Data.getINSTANCE().get_conn();
         if (conn != null) {
@@ -23,6 +23,7 @@ public class UserDAO extends User {
                 st.setString(2, password);
                 ResultSet rs = st.executeQuery();
                 if (rs != null && rs.next()) {
+                    u = new User();
                     createUser(user, pass, u, rs);
                     rs.close();
                 } else {
@@ -43,15 +44,16 @@ public class UserDAO extends User {
         return u;
     }
 
-    private static User getUserByName(String user) {
-        User u = new User();
+    public static User getUserByName(String user) {
+        User u = null;
         Connection conn = Data.getINSTANCE().get_conn();
         if (conn != null) {
-            String sql = "SELECT * from user WHERE username = ? AND password = ?";
+            String sql = "SELECT * from user WHERE username = ?";
             try (PreparedStatement st = conn.prepareStatement(sql)) {
                 st.setString(1, user);
                 ResultSet rs = st.executeQuery();
                 if (rs != null && rs.next()) {
+                    u = new User();
                     createUser(user, "", u, rs);
                     rs.close();
                 }

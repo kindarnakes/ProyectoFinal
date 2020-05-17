@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -60,6 +62,8 @@ public class Ymedia {
     @FXML
     private ImageView rivalImage;
     @FXML
+    private ImageView playerImage;
+    @FXML
     private Label playerscore;
     @FXML
     private Label rivalscore;
@@ -75,7 +79,7 @@ public class Ymedia {
     private User AI;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
         Image img = new Image("/CardsImages/cubierta.png");
         rival1.setImage(img);
         rival2.setImage(img);
@@ -99,10 +103,14 @@ public class Ymedia {
         player10.setImage(img);
         img = new Image("/AI/AI.gif");
         rivalImage.setImage(img);
+        Blob player = Data.getINSTANCE().get_logged().get_img();
+        if(player != null){
+            img = new Image(player.getBinaryStream());
+            playerImage.setImage(img);
+        }
 
     }
 
-    ;
 
     @FXML
     public void pedir() {
@@ -149,9 +157,11 @@ public class Ymedia {
 
     @FXML
     public void stop() {
-        doAI();
-        winner.setText("Gana: " + this.juego.winner().get_username());
-        exit.setVisible(true);
+        if (init) {
+            doAI();
+            winner.setText("Gana: " + this.juego.winner().get_username());
+            exit.setVisible(true);
+        }
     }
 
     private void doAI() {
@@ -159,7 +169,6 @@ public class Ymedia {
         Iterator<Card> it;
         int ncards;
         this.juego.AI(AI);
-        System.out.println(this.juego.score(AI));
         this.rivalscore.setText(this.juego.score(AI) + "");
         cards = this.juego.playersCards(AI);
         it = cards.iterator();

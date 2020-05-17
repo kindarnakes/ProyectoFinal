@@ -2,7 +2,7 @@ package Proyecto.model;
 
 import java.time.LocalDateTime;
 
-public class Match {
+public class Match implements Comparable<Match> {
     private User _user1;
     private User _user2;
     private User _winner;
@@ -80,5 +80,10 @@ public class Match {
         result = 31 * result + (_time != null ? _time.hashCode() : 0);
         result = 31 * result + (_game != null ? _game.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public int compareTo(Match o) {
+        return this._time.compareTo(o._time);
     }
 }

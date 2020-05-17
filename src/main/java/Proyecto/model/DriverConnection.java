@@ -18,7 +18,7 @@ public class DriverConnection {
         loadDriver();
         Connection connect = null;
         try {
-            String timezone = "?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            String timezone = "?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Madrid";
             connect = DriverManager.getConnection("jdbc:mysql://" + ip + "/" + bd + timezone, user, pass);
             return connect;
         } catch (SQLException ex) {

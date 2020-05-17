@@ -60,21 +60,25 @@ public class SieteYMedia {
     }
 
     public User winner() {
-        User u = new User();
+        User u = null;
 
         for (User us : _users.keySet()) {
             if (this.score(us) <= 7.5 && this.score(us) > this.score(u)) {
                 u = us;
+            } else if (this.score(us) == this.score(u)) {
+                u = null;
             }
         }
         if (u == null) {
             u = new User();
             u.set_username("Empate");
         } else if (!u.get_username().equals("IA")) {
-            int score = (int)score(u) * 10;
-            if(score > 75){
+            int score = (int) score(u) * 10;
+            if (score > 75) {
                 score = 0;
             }
+            Iterator<User> it = _users.keySet().iterator();
+            MatchDAO.saveMatch(it.next(), it.next(), u, "7yMedia");
             ScoreDAO.save(u.get_username(), (int) (score / playersCards(u).size()) * 10, "7yMedia");
         }
         return u;
