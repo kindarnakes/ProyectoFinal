@@ -2,10 +2,13 @@ D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\UserD
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\module-info.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\Card.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\controllers\ChooseBD.java
+D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\Utils\Utils.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\Score.java
+D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\ScoreDAO.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\controllers\Signup.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\controllers\LoginController.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\ConnectionData.java
+D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\controllers\Scores.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\Data.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\model\User.java
 D:\Users\kin_d_000\IdeaProjects\ProyectoFinal\src\main\java\Proyecto\Run.java

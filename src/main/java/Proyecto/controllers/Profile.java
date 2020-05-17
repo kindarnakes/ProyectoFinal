@@ -13,10 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 
 import java.io.*;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Profile {
     @FXML
@@ -54,25 +57,21 @@ public class Profile {
 
     @FXML
     public void back() throws IOException {
+        this.deletecheck.getScene().getWindow().setHeight(420);
         App.setRoot("Login");
     }
 
     @FXML
     public void imageSelector() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Elige la imagen ...");
-        this.img = fileChooser.showOpenDialog(image.getScene().getWindow());
+        Map<String, String> extensiones = new HashMap<>();
+        extensiones.put("Imagen PNG (*.png)", "*.png");
+        extensiones.put("Imagen JPG (*.jpg)", "*.jpg");
+        this.img = Utils.fileChooser(extensiones, 60 * 1024);
         if (this.img != null) {
-            if (this.img.length() < 60 * 1024) {
-                String name = img.getName();
-                if ((name.matches("(.*).jpg") || name.matches("(.*).png"))) {
-                    Image image = new Image(String.valueOf(img.toURI()));
-                    this.image.setImage(image);
-                } else {
-                }
-            } else {
-                Utils.emergente("Tamaño excedido", "Elija una imagen con tamaño menor");
-            }
+            Image image = new Image(String.valueOf(img.toURI()));
+            this.image.setImage(image);
+        } else {
+            Utils.emergente("Tamaño excedido", "Elija una imagen válida\nTamaño inferior a 60 KB");
         }
     }
 
@@ -104,6 +103,21 @@ public class Profile {
             } else {
                 Utils.emergente("Borrado", "");
             }
+        } else {
+            Utils.emergente("Borrado", "Debe marcar la casilla de confirmación para borrar");
         }
+    }
+
+    @FXML
+    public void scores7YMedia() {
+        Scores controller = (Scores) Utils.newWindowWithController("/views/Scores.fxml", "Tabla de puntuaciones 7 y media", Modality.APPLICATION_MODAL);
+        controller.setGame("7ymedia");
+        controller.setTableTitle("Tabla de puntuaciones de 7 y media");
+        controller.show();
+    }
+
+    @FXML
+    public void playIA7Media() throws IOException {
+        App.setRoot("7yMedia");
     }
 }

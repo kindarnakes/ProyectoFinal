@@ -8,6 +8,10 @@ public class ConnectionData {
     private String pass;
 
     public ConnectionData() {
+        this.ip = "localhost:3306";
+        this.bd = "juegos";
+        this.user = "root";
+        this.pass = "10junio";
     }
 
     public ConnectionData(String ip, String bd, String user, String pass) {

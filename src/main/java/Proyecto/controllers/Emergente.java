@@ -20,28 +20,21 @@ public class Emergente {
     }
 
     public void setMensaje(String s) {
-        if (!DriverConnection.getError().equals("")) {
-            String error = "";
-            String lines = DriverConnection.getError();
-            while (lines.length() > 75) {
-                error += lines.substring(0, 75) + "\n";
-                lines = lines.substring(75);
-            }
-            error += lines;
-            estado.setText(error);
-        } else {
-            estado.setText(s);
+
+        String error = "";
+        String lines = s;
+        while (lines.length() > 75) {
+            error += lines.substring(0, 75) + "\n";
+            lines = lines.substring(75);
         }
+        error += lines;
+        estado.setText(error);
     }
 
     @FXML
     public void back() {
         Stage stage = (Stage) this.aceptar.getScene().getWindow();
-        DriverConnection.setError("");
         stage.close();
     }
 
-    public void finalize() {
-        DriverConnection.setError("");
-    }
 }

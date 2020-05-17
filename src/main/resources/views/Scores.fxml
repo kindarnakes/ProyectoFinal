@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.Scores">
+    <children>
+        <Label fx:id="title" layoutX="21.0" layoutY="30.0" prefHeight="47.0" prefWidth="682.0" textAlignment="CENTER"
+               underline="true">
+            <font>
+                <Font name="Arial" size="24.0"/>
+            </font>
+        </Label>
+        <Button fx:id="back" layoutX="52.0" layoutY="481.0" mnemonicParsing="false" onAction="#back" text="Átras"/>
+        <Button fx:id="updateTable" layoutX="621.0" layoutY="481.0" mnemonicParsing="false" onAction="#show"
+                text="Actualizar"/>
+        <Button fx:id="delete" layoutX="299.0" layoutY="494.0" mnemonicParsing="false" onAction="#delete"
+                text="Borrar mi puntuación"/>
+        <TableView fx:id="scores" layoutX="99.0" layoutY="127.0" prefHeight="344.0" prefWidth="530.0">
+            <columns>
+                <TableColumn fx:id="username" prefWidth="255.0" text="Usuario"/>
+                <TableColumn fx:id="score" prefWidth="274.0" text="Puntos"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

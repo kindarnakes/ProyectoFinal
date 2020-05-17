@@ -1,12 +1,12 @@
 package Proyecto.controllers;
 
 import java.io.IOException;
+import java.sql.Driver;
 
 import Proyecto.App;
 import Proyecto.Utils.Utils;
 import Proyecto.model.Data;
-import Proyecto.model.User;
-import Proyecto.model.UserDAO;
+import Proyecto.model.DriverConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,30 +30,22 @@ public class LoginController {
 
     @FXML
     public void login() throws IOException {
-        User u = null;
-        u = UserDAO.getUserByNameAndPass(usuario.getText(), password.getText());
-        if (u != null && password.getText().equals(u.get_password())) {
-            Data.getINSTANCE().set_logged(u);
-            App.setRoot("Profile");
-        } else {
-            Utils.emergente("Fallo de identificación", "");
 
+        if (!usuario.getText().equals("") && !password.getText().equals("")) {
+            if (Data.getINSTANCE().login(usuario.getText(), password.getText())) {
+                App.setRoot("Profile");
+            } else {
+                Utils.emergente("Fallo de identificación", DriverConnection.getError());
+            }
+        } else {
+
+            Utils.emergente("Fallo de identificación", "No puedes dejar campos vacíos");
         }
     }
 
     @FXML
     public void openChooser() {
-        Parent root;
-        try {
-            root = FXMLLoader.load(App.class.getResource("/views/chooseBD.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Elegir Base de Datos");
-            stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Utils.newWindow("/views/chooseBD.fxml", "Elegir Base de Datos", Modality.APPLICATION_MODAL);
     }
 
     @FXML

@@ -22,7 +22,7 @@ public class Deck {
      */
     public final void barajar() {
         String[] palos = {"Espadas", "Oros", "Copas", "Bastos"};
-        String[] numeros = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+        String[] numeros = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "Sota", "Caballo", "Rey"};
         int i = 0;
         _cartas = new ArrayList<>();
         _sacadas = new ArrayList<>();

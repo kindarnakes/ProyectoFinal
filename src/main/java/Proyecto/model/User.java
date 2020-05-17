@@ -11,6 +11,8 @@ public class User {
     private Blob _img;
 
     public User() {
+        this._username = "";
+        this._password = "";
     }
 
     public User(String _username, String _password, String _email, LocalDate _born, Blob _img) {

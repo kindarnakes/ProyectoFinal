@@ -47,4 +47,36 @@ public class SieteYMedia {
 
         return score;
     }
+
+    public ArrayList<Card> playersCards(User u) {
+        return this._users.get(u);
+    }
+
+    public void AI(User u) {
+
+        while (this.score(u) < 6) {
+            this.turn(u);
+        }
+    }
+
+    public User winner() {
+        User u = new User();
+
+        for (User us : _users.keySet()) {
+            if (this.score(us) <= 7.5 && this.score(us) > this.score(u)) {
+                u = us;
+            }
+        }
+        if (u == null) {
+            u = new User();
+            u.set_username("Empate");
+        } else if (!u.get_username().equals("IA")) {
+            int score = (int)score(u) * 10;
+            if(score > 75){
+                score = 0;
+            }
+            ScoreDAO.save(u.get_username(), (int) (score / playersCards(u).size()) * 10, "7yMedia");
+        }
+        return u;
+    }
 }

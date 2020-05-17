@@ -2,20 +2,15 @@ package Proyecto.model;
 
 
 import java.sql.Connection;
-import java.util.ArrayList;
 
 public class Data {
     private static Data INSTANCE = new Data();
     private User _logged;
-    private ArrayList<Score> _scores;
-    private ArrayList<Match> _historic;
     private ConnectionData _conn;
 
 
     public Data() {
         this.INSTANCE = this;
-        this._scores = new ArrayList<>();
-        this._historic = new ArrayList<>();
         this._conn = new ConnectionData();
     }
 
@@ -31,19 +26,23 @@ public class Data {
         this._logged = u;
     }
 
-    public ArrayList<Score> get_scores() {
-        return _scores;
-    }
-
-    public ArrayList<Match> get_historic() {
-        return _historic;
-    }
-
     public Connection get_conn() {
         return DriverConnection.Connection(this._conn.getIp(), this._conn.getBd(), this._conn.getUser(), this._conn.getPass());
     }
 
     public void set_conn(ConnectionData _conn) {
         this._conn = _conn;
+    }
+
+    public boolean login(String username, String pass) {
+        boolean login = false;
+        if (username != null && pass != null && (username.length() > 0 && pass.length() > 0)) {
+            User u = UserDAO.getUserByNameAndPass(username, pass);
+            if (u != null && (u.get_username().equals(username))) {
+                login = true;
+                this._logged = u;
+            }
+        }
+        return login;
     }
 }

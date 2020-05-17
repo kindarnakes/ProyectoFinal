@@ -1,11 +1,14 @@
 Proyecto\model\Data.class
 Proyecto\model\Card.class
+Proyecto\controllers\Scores.class
 Proyecto\model\Score.class
 Proyecto\model\DriverConnection.class
 Proyecto\controllers\ChooseBD.class
 Proyecto\controllers\Ymedia.class
 Proyecto\model\Deck.class
+Proyecto\Utils\Utils.class
 Proyecto\Run.class
+Proyecto\model\ScoreDAO.class
 module-info.class
 Proyecto\controllers\Emergente.class
 Proyecto\model\ConnectionData.class

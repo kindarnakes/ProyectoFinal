@@ -1,21 +1,21 @@
 package Proyecto.model;
 
-public class Score {
-    private User _user;
+public class Score implements Comparable<Score> {
+    private String _user;
     private Integer _score;
     private String _game;
 
-    public Score(User _user, Integer _score, String _game) {
+    public Score(String _user, Integer _score, String _game) {
         this._user = _user;
         this._score = _score;
         this._game = _game;
     }
 
-    public User get_user() {
+    public String get_user() {
         return _user;
     }
 
-    public void set_user(User _user) {
+    public void set_user(String _user) {
         this._user = _user;
     }
 
@@ -51,5 +51,10 @@ public class Score {
         int result = _user != null ? _user.hashCode() : 0;
         result = 31 * result + (_game != null ? _game.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public int compareTo(Score o) {
+        return Integer.compare(o._score, this._score);
     }
 }
