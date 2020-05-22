@@ -39,27 +39,6 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-            <Tab text="Conecta 4">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="150.0">
-                     <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar contra la IA" />
-                        <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar Online" />
-                        <Button layoutX="82.0" layoutY="55.0" mnemonicParsing="false" onAction="#notImplement" text="Tabla de puntuaciones" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab><Tab text="Hundir la Flota">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="150.0">
-                        <children>
-                            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar contra la IA" />
-                            <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar Online" />
-                            <Button layoutX="82.0" layoutY="55.0" mnemonicParsing="false" onAction="#notImplement" text="Tabla de puntuaciones" />
-                        </children>
-                    </AnchorPane>
-                </content>
-            </Tab>
             </tabs>
         </TabPane>
         <Button fx:id="historic" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" onAction="#historic" text="Historial de partidas" />
