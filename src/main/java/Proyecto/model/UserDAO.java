@@ -8,7 +8,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.Base64;
 
-public class UserDAO extends User {
+public class UserDAO {
 
 
     public static User getUserByNameAndPass(String user, String pass) {

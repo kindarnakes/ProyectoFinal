@@ -20,7 +20,7 @@ public class App extends Application {
         Parent root = loadFXML("Login");
         scene = new Scene(root, root.prefWidth(0), root.prefHeight(0));
         stage.setScene(scene);
-        stage.setTitle("Game 4 All");
+        stage.setTitle("Games 4 All");
         stage.show();
     }
 
