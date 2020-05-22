@@ -5,25 +5,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="549.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.Profile">
+<AnchorPane prefHeight="549.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Proyecto.controllers.Profile">
     <children>
         <Label layoutX="155.0" layoutY="14.0" text="Perfil de usuario" underline="true">
             <font>
-                <Font name="System Bold" size="32.0" />
+                <Font name="System Bold" size="32.0"/>
             </font>
         </Label>
-        <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="56.0" />
-        <Button fx:id="imagechoose" layoutX="417.0" layoutY="214.0" mnemonicParsing="false" onAction="#imageSelector" text="Imagen ..." AnchorPane.topAnchor="214.0" />
-        <Button fx:id="back" layoutX="43.0" layoutY="464.0" mnemonicParsing="false" onAction="#back" text="Átras" />
-        <Button fx:id="update" layoutX="168.0" layoutY="329.0" mnemonicParsing="false" onAction="#update" text="Actualizar" AnchorPane.leftAnchor="168.0" />
-        <DatePicker fx:id="date" layoutX="107.0" layoutY="262.0" AnchorPane.leftAnchor="107.0" />
-        <TextField fx:id="email" layoutX="120.0" layoutY="214.0" AnchorPane.leftAnchor="120.0" />
-        <TextField fx:id="user" layoutX="120.0" layoutY="139.0" AnchorPane.leftAnchor="120.0" />
-        <PasswordField fx:id="pass" layoutX="120.0" layoutY="178.0" AnchorPane.leftAnchor="120.0" />
-        <Button fx:id="delete" layoutX="404.0" layoutY="329.0" mnemonicParsing="false" onAction="#delete" text="Borrar perfil" />
+        <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="64.0" pickOnBounds="true"
+                   preserveRatio="true" AnchorPane.topAnchor="56.0"/>
+        <Button fx:id="imagechoose" layoutX="417.0" layoutY="214.0" mnemonicParsing="false" onAction="#imageSelector"
+                text="Imagen ..." AnchorPane.topAnchor="214.0"/>
+        <Button fx:id="back" layoutX="43.0" layoutY="464.0" mnemonicParsing="false" onAction="#back" text="Átras"/>
+        <Button fx:id="update" layoutX="168.0" layoutY="329.0" mnemonicParsing="false" onAction="#update"
+                text="Actualizar" AnchorPane.leftAnchor="168.0"/>
+        <DatePicker fx:id="date" layoutX="107.0" layoutY="262.0" AnchorPane.leftAnchor="107.0"/>
+        <TextField fx:id="email" layoutX="120.0" layoutY="214.0" AnchorPane.leftAnchor="120.0"/>
+        <TextField fx:id="user" layoutX="120.0" layoutY="139.0" AnchorPane.leftAnchor="120.0"/>
+        <PasswordField fx:id="pass" layoutX="120.0" layoutY="178.0" AnchorPane.leftAnchor="120.0"/>
+        <Button fx:id="delete" layoutX="404.0" layoutY="329.0" mnemonicParsing="false" onAction="#delete"
+                text="Borrar perfil"/>
         <CheckBox fx:id="deletecheck" layoutX="374.0" layoutY="302.0" mnemonicParsing="false" text="Confirmar Borrado">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </CheckBox>
         <TabPane layoutX="213.0" layoutY="403.0" prefHeight="123.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
@@ -32,36 +37,19 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="150.0">
                             <children>
-                                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#playIA7Media" text="Jugar contra la IA" />
-                                <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar Online" />
-                                <Button layoutX="82.0" layoutY="55.0" mnemonicParsing="false" onAction="#scores7YMedia" text="Tabla de puntuaciones" />
+                                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#playIA7Media"
+                                        text="Jugar contra la IA"/>
+                                <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement"
+                                        text="Jugar Online"/>
+                                <Button layoutX="82.0" layoutY="55.0" mnemonicParsing="false" onAction="#scores7YMedia"
+                                        text="Tabla de puntuaciones"/>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-            <Tab text="Conecta 4">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="150.0">
-                     <children>
-                        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar contra la IA" />
-                        <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar Online" />
-                        <Button layoutX="82.0" layoutY="55.0" mnemonicParsing="false" onAction="#notImplement" text="Tabla de puntuaciones" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab><Tab text="Hundir la Flota">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="150.0">
-                        <children>
-                            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar contra la IA" />
-                            <Button layoutX="173.0" layoutY="14.0" mnemonicParsing="false" onAction="#notImplement" text="Jugar Online" />
-                            <Button layoutX="82.0" layoutY="55.0" mnemonicParsing="false" onAction="#notImplement" text="Tabla de puntuaciones" />
-                        </children>
-                    </AnchorPane>
-                </content>
-            </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="historic" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" onAction="#historic" text="Historial de partidas" />
+        <Button fx:id="historic" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" onAction="#historic"
+                text="Historial de partidas"/>
     </children>
 </AnchorPane>

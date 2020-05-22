@@ -19,6 +19,7 @@ public class SieteYMedia {
 
     /**
      * Elecuta el turno de un jugador dado en el que saca una carta mas
+     *
      * @param u jugador/usuario que ejecuta el turno
      * @return devuelve si el tuno ha podido ejecutarse o no
      */
@@ -44,6 +45,7 @@ public class SieteYMedia {
 
     /**
      * Devuelve la puntuacion de un usuario/jugador
+     *
      * @param u usuario a calcular la puntuacion
      * @return devuelve la puntuacion del usuario
      */
@@ -63,6 +65,7 @@ public class SieteYMedia {
 
     /**
      * Devuelve la cartas de un usuario
+     *
      * @param u usuario del que queremos las cartas
      * @return cartas del usuario
      */
@@ -72,6 +75,7 @@ public class SieteYMedia {
 
     /**
      * Ejecuta la IA del juego
+     *
      * @param u usuario que representa la IA
      */
     public void AI(User u) {
@@ -83,6 +87,7 @@ public class SieteYMedia {
 
     /**
      * Calcula que usuario ha ganado la partida, y la da por completada almacenando los datos correspondientes a la partida en la BD
+     *
      * @return devuelve el usuario ganador
      */
     public User winner() {
@@ -92,15 +97,15 @@ public class SieteYMedia {
         boolean empate = false;
 
         for (User us : _users.keySet()) {
-            if(!empate){
+            if (!empate) {
                 uscore = this.score(u);
             }
             usscore = this.score(us);
             //si algun usuario se pasa, la puntuacion es -1
-            if(uscore > 7.5){
+            if (uscore > 7.5) {
                 uscore = -1;
             }
-            if(usscore > 7.5){
+            if (usscore > 7.5) {
                 uscore = -1;
             }
             if (usscore <= 7.5 && usscore > uscore) {
@@ -115,20 +120,22 @@ public class SieteYMedia {
             u.set_username("Empate");
         }
 
-            Iterator<User> it = _users.keySet().iterator();
-            MatchDAO.saveMatch(it.next(), it.next(), u, "7yMedia");
-            for(User user: _users.keySet()){
-                if(Data.getINSTANCE().get_logged().equals(user)){
+        Iterator<User> it = _users.keySet().iterator();
+        MatchDAO.saveMatch(it.next(), it.next(), u, "7yMedia");
+        if (Data.getINSTANCE().get_logged() != null) { //comprobacion unicamente necesaria para los test
+            for (User user : _users.keySet()) {
+                if (Data.getINSTANCE().get_logged().equals(user)) {
                     double score = (score(user) * 10);
                     if (score > 75) {
                         score = 0;
-                    }else if(score == 75){
+                    } else if (score == 75) {
                         score *= 2;
                     }
-                    ScoreDAO.save(user.get_username(), (int)((score / playersCards(user).size()) * 10), "7yMedia");
+                    ScoreDAO.save(user.get_username(), (int) ((score / playersCards(user).size()) * 10), "7yMedia");
+
+                }
 
             }
-
         }
         return u;
     }

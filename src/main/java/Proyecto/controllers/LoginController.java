@@ -25,7 +25,7 @@ public class LoginController {
     private ImageView banner;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         banner.setImage(new Image("/Banner.png"));
     }
 
@@ -46,7 +46,7 @@ public class LoginController {
     }
 
     @FXML
-    public void acerca(){
+    public void acerca() {
         Utils.emergente("Acerca de ...", "Trabajo realizado por: Ángel Serrano García\nPara el módulo de Programación del CFGS DAM\nIES Francisco de los Ríos\nProfesor: Carlos Serrano Sánchez");
     }
 

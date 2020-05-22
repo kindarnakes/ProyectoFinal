@@ -70,7 +70,7 @@ public class Signup {
                 Utils.emergente("Registro", DriverConnection.getError());
             }
         } else {
-            Utils.emergente("Registro", "No puedes dejar campos obligatorios vacíos");
+            Utils.emergente("Registro", "No puedes dejar campos obligatorios vacíos, Usuario y Contraseña");
         }
     }
 

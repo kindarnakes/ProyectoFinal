@@ -16,8 +16,9 @@ public class DriverConnection {
 
     /**
      * Conecta a la base de datos especificada
-     * @param ip la ip de la base de datos
-     * @param bd en nombre de la base de datos
+     *
+     * @param ip   la ip de la base de datos
+     * @param bd   en nombre de la base de datos
      * @param user el usuario de la base de datos
      * @param pass la contraseña de la base de datos
      * @return la conexion realizada, o null si no se ha podido conectar

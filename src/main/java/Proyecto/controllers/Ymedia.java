@@ -104,7 +104,7 @@ public class Ymedia {
         img = new Image("/AI/AI.gif");
         rivalImage.setImage(img);
         Blob player = Data.getINSTANCE().get_logged().get_img();
-        if(player != null){
+        if (player != null) {
             img = new Image(player.getBinaryStream());
             playerImage.setImage(img);
         }

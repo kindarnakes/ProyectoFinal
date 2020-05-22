@@ -127,7 +127,7 @@ public class Profile {
     }
 
     @FXML
-    public void notImplement(){
+    public void notImplement() {
         Utils.emergente("No implementado aún", "Esta funcionalidad aún no esta implementada");
     }
 }

@@ -166,7 +166,10 @@ public class UserDAO extends User {
                     if (_img != null) {
                         st.setBlob(5, _img);
                     } else {
-                        Blob b = Data.getINSTANCE().get_logged().get_img();
+                        Blob b = null;
+                        if (Data.getINSTANCE().get_logged() != null) {
+                            b = Data.getINSTANCE().get_logged().get_img();
+                        }
                         st.setBlob(5, b);
                     }
                     st.setString(6, oldUser);
