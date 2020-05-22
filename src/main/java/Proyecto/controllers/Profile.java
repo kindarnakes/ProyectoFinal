@@ -125,4 +125,9 @@ public class Profile {
     public void historic() {
         Utils.newWindow("/views/Historic.fxml", "Historial de partidas", Modality.APPLICATION_MODAL);
     }
+
+    @FXML
+    public void notImplement(){
+        Utils.emergente("No implementado aún", "Esta funcionalidad aún no esta implementada");
+    }
 }
